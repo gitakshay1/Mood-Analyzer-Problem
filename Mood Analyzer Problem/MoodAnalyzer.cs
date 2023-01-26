@@ -10,15 +10,15 @@ namespace Mood_Analyzer_Problem
     {
         public string Analyzer(string Mood)
         {
-            if(Mood.ToLower().Contains("happy"))
+            if(Mood.ToLower().Contains("sad"))
             {
-                Console.WriteLine("Happy Mood");
-                return Mood.ToLower();
+                Console.WriteLine("SAD");
+                return "SAD";
             }
             else
             {
-                Console.WriteLine("Sad Mood");
-                return Mood.ToLower();
+                Console.WriteLine("HAPPY");
+                return "HAPPY";
             }
         }
     }
