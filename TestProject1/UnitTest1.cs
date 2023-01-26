@@ -9,10 +9,10 @@ namespace TestProject1
         public void CheckMoodAnalyzerretunSad()
         {
             //Arrange
-            MoodAnalyzer moodAnalyzer=new MoodAnalyzer();
+            MoodAnalyzer moodAnalyzer=new MoodAnalyzer("I am in sad Mood");
 
             //Act
-            string ActualOutPut=moodAnalyzer.Analyzer("I am in sad Mood");
+            string ActualOutPut=moodAnalyzer.Analyzer();
             string ExpectedOutPut = "SAD";
 
             //Assert
@@ -22,10 +22,10 @@ namespace TestProject1
         public void CheckMoodAnalyzerRetunHappy()
         {
             //Arrange
-            MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
+            MoodAnalyzer moodAnalyzer = new MoodAnalyzer("I am in Any Mood");
 
             //Act
-            string ActualOutPut = moodAnalyzer.Analyzer("I am in Any Mood");
+            string ActualOutPut = moodAnalyzer.Analyzer();
             string ExpectedOutPut = "HAPPY";
 
             //Assert

@@ -8,7 +8,13 @@ namespace Mood_Analyzer_Problem
 {
     public class MoodAnalyzer
     {
-        public string Analyzer(string Mood)
+        private string Mood;
+
+        public MoodAnalyzer(string Mood)
+        {
+            this.Mood= Mood.ToUpper();
+        }
+        public string Analyzer()
         {
             if(Mood.ToLower().Contains("sad"))
             {
