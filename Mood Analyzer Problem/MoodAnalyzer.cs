@@ -16,16 +16,31 @@ namespace Mood_Analyzer_Problem
         }
         public string Analyzer()
         {
-            if(Mood.ToLower().Contains("sad"))
+            try
             {
-                Console.WriteLine("SAD");
-                return "SAD";
+                if (Mood.ToLower().Contains("sad"))
+                {
+                    Console.WriteLine("SAD");
+                    return "SAD";
+                }
+                else if(Mood.ToLower().Contains("happy"))
+                {
+                    Console.WriteLine("HAPPY");
+                    return "HAPPY";
+                }
+                else
+                {
+                    
+                    return "HAPPY";
+                }
             }
-            else
+            catch (NullReferenceException )
             {
-                Console.WriteLine("HAPPY");
+                
                 return "HAPPY";
             }
+           
+            
         }
     }
 }

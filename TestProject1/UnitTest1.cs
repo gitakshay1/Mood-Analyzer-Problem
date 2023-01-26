@@ -31,5 +31,18 @@ namespace TestProject1
             //Assert
             Assert.AreEqual(ExpectedOutPut, ActualOutPut);
         }
+        [TestMethod]
+        public void ExceptionHandle()
+        {
+            //Arrange
+            MoodAnalyzer moodAnalyzer = new MoodAnalyzer("a");
+
+            //Act
+            string ActualOutPut = moodAnalyzer.Analyzer();
+            string ExpectedOutPut = "HAPPY";
+
+            //Assert
+            Assert.AreEqual(ExpectedOutPut, ActualOutPut);
+        }
     }
 }
