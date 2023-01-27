@@ -18,20 +18,18 @@ namespace Mood_Analyzer_Problem
         {
             try
             {
-                if (Mood.ToLower().Contains("sad"))
+                if (message.Equals(string.Empty))
                 {
-                    Console.WriteLine("SAD");
-                    return "SAD";
+                    throw new CustomException(CustomException.ExceptionType.EMPTY_EXCEPTION, "Mood should not be empty");
                 }
-                else if(Mood.ToLower().Contains("happy"))
+
+                else if (message.ToLower().Contains("happy"))
                 {
-                    Console.WriteLine("HAPPY");
-                    return "HAPPY";
+                    return "happy";
                 }
                 else
                 {
-                    
-                    return "HAPPY";
+                    return "sad";
                 }
             }
             catch (NullReferenceException )
