@@ -44,9 +44,7 @@ namespace TestProject1
             //Assert
             Assert.AreEqual(ExpectedOutPut, ActualOutPut);
         }
-        /// <summary>
-        /// TestCase 4.2
-        /// </summary>
+        
         [TestMethod]
         public void GivenMoodAnalyzerClassName_WhenImproper_ShouldThrowMoodAnalysisException()
         {
@@ -61,9 +59,7 @@ namespace TestProject1
             }
         }
 
-        /// <summary>
-        /// TestCase 4.2
-        /// </summary>
+        
         [TestMethod]
         public void GivenMoodAnalyzerConstructorName_WhenImproper_ShouldThrowMoodAnalysisException()
         {
