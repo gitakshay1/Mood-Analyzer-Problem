@@ -51,7 +51,7 @@ namespace TestProject1
             string expected = "Class not found";
             try
             {
-                object actual = MoodAnalyzerFactory.CreateMoodAnalyse("MoodAnalyzerProblem.Mood", "Mood");
+                object actual = MoodAnalyzerReflector.CreateMoodAnalyse("MoodAnalyzerProblem.Mood", "Mood","Parmerties Constructor");
             }
             catch (CustomException e)
             {
@@ -66,12 +66,33 @@ namespace TestProject1
             string expected = "Constructor not found";
             try
             {
-                object actual = MoodAnalyzerFactory.CreateMoodAnalyse("MoodAnalyzerProblem.MoodAnalyzer", "Mood");
+                object actual = MoodAnalyzerReflector.CreateMoodAnalyse("MoodAnalyzerProblem.MoodAnalyzer", "Mood", "Parmerties Constructor");
             }
             catch (CustomException e)
             {
                 Assert.AreEqual(expected, e.Message);
             }
+        }
+        /// <summary>
+        /// TestCase 6.1
+        /// </summary>
+        [TestMethod]
+        public void GivenHappyMessageUsingReflection_WhenProper_ShouldReturnHappy()
+        {
+            string expected = "happy";
+            string actual = MoodAnalyzerReflector.InvokeAnalyseMood("I am happy", "MoodAnalyzer");
+            expected.Equals(actual);
+        }
+
+        /// <summary>
+        /// TestCase 6.2
+        /// </summary>
+        [TestMethod]
+        public void GivenMethodname_WhenImproper_ShouldReturnMoodAnalysisException()
+        {
+            string expected = "Method not found";
+            string actual = MoodAnalyzerReflector.InvokeAnalyseMood("I am happy", "Mood");
+            Assert.AreEqual(expected, actual);
         }
     }
 }
