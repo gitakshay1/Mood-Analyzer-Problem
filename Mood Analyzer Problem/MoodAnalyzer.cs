@@ -9,6 +9,7 @@ namespace Mood_Analyzer_Problem
     public class MoodAnalyzer
     {
         private string Mood;
+        private object message;
 
         public MoodAnalyzer(string Mood)
         {
@@ -18,12 +19,12 @@ namespace Mood_Analyzer_Problem
         {
             try
             {
-                if (message.Equals(string.Empty))
+                if (Mood.Equals(string.Empty))
                 {
                     throw new CustomException(CustomException.ExceptionType.EMPTY_EXCEPTION, "Mood should not be empty");
                 }
 
-                else if (message.ToLower().Contains("happy"))
+                else if (Mood.ToLower().Contains("happy"))
                 {
                     return "happy";
                 }

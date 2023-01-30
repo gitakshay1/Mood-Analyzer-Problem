@@ -44,5 +44,38 @@ namespace TestProject1
             //Assert
             Assert.AreEqual(ExpectedOutPut, ActualOutPut);
         }
+        /// <summary>
+        /// TestCase 4.2
+        /// </summary>
+        [TestMethod]
+        public void GivenMoodAnalyzerClassName_WhenImproper_ShouldThrowMoodAnalysisException()
+        {
+            string expected = "Class not found";
+            try
+            {
+                object actual = MoodAnalyzerFactory.CreateMoodAnalyse("MoodAnalyzerProblem.Mood", "Mood");
+            }
+            catch (CustomException e)
+            {
+                Assert.AreEqual(expected, e.Message);
+            }
+        }
+
+        /// <summary>
+        /// TestCase 4.2
+        /// </summary>
+        [TestMethod]
+        public void GivenMoodAnalyzerConstructorName_WhenImproper_ShouldThrowMoodAnalysisException()
+        {
+            string expected = "Constructor not found";
+            try
+            {
+                object actual = MoodAnalyzerFactory.CreateMoodAnalyse("MoodAnalyzerProblem.MoodAnalyzer", "Mood");
+            }
+            catch (CustomException e)
+            {
+                Assert.AreEqual(expected, e.Message);
+            }
+        }
     }
 }
